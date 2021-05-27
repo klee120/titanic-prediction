@@ -13,10 +13,10 @@ for dirname, _, filenames in os.walk('/kaggle/input'):
 
 
 # input the data
-train_data = pd.read_csv("train.csv")
+train_data = pd.read_csv("/kaggle/input/titanic/train.csv")
 train_data.head()
 
-test_data = pd.read_csv("test.csv")
+test_data = pd.read_csv("/kaggle/input/titanic/test.csv")
 test_data.head()
 
 # explore what percentage of women survived
@@ -46,3 +46,4 @@ predictions = model.predict(X_test)
 
 output = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': predictions})
 output.to_csv('my_submission.csv', index=False)
+print("Your submission was successfully saved!")
